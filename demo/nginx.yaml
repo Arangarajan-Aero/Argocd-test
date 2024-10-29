@@ -35,7 +35,7 @@ metadata:
 spec:
   ports:
   - port: 80
-    targetPort: 800
+    targetPort: 80
     name: http
   selector:
     app: nginx
