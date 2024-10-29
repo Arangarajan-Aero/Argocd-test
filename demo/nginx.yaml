@@ -35,8 +35,8 @@ metadata:
 spec:
   ports:
   - port: 80
-    targetPort: 80
+    targetPort: 800
     name: http
   selector:
     app: nginx
-  type: NodePort
+  type: LoadBalancer
