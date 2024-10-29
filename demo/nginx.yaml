@@ -39,4 +39,4 @@ spec:
     name: http
   selector:
     app: nginx
-  type: LoadBalancer
+  type: NodePort
