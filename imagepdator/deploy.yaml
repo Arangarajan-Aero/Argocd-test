@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: my-python-app
-          image: simple-app=905418475780.dkr.ecr.ap-south-1.amazonaws.com/devsecops/maven:latest  # Update the image with your actual account ID and repository name
+          image: 905418475780.dkr.ecr.ap-south-1.amazonaws.com/devsecops/maven:latest  # Corrected image reference
           ports:
             - containerPort: 5000  # Updated to match the exposed port in the Dockerfile
           resources:
@@ -38,4 +38,4 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 5000  # Updated to match the containerPort
-  type: LoadBalancer
+  type: NodePort
