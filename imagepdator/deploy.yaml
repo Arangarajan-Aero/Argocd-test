@@ -5,7 +5,7 @@ metadata:
   annotations:
     argocd-image-updater.argoproj.io/image-list: "my-python-app=905418475780.dkr.ecr.ap-south-1.amazonaws.com/devsecops/maven"
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: my-python-app
