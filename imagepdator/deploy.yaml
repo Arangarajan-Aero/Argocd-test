@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-simple-app
+  namespace: my-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: my-simple-app
+  template:
+    metadata:
+      labels:
+        app: my-simple-app
+    spec:
+      containers:
+        - name: my-simple-app
+          image: <your-account-id>.dkr.ecr.ap-south-1.amazonaws.com/your-repository-name:latest
+          ports:
+            - containerPort: 3000
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-simple-app-service
+  namespace: my-app
+spec:
+  selector:
+    app: my-simple-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+  type: LoadBalancer
