@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: my-simple-app
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: "my-simple-app=905418475780.dkr.ecr.ap-south-1.amazonaws.com/devsecops/maven:latest"
 spec:
   replicas: 2
   selector:
@@ -14,7 +16,7 @@ spec:
     spec:
       containers:
         - name: my-simple-app
-          image: 905418475780.dkr.ecr.ap-south-1.amazonaws.com/devsecops/maven:latest
+          image: 905418475780.dkr.ecr.ap-south-1.amazonaws.com/devsecops/maven:latest:latest
           ports:
             - containerPort: 3000
           resources:
