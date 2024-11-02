@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: my-python-app
   annotations:
-    argocd-image-updater.argoproj.io/image-list: "my-python-app=my-simple-app=905418475780.dkr.ecr.ap-south-1.amazonaws.com/devsecops/maven"
+    argocd-image-updater.argoproj.io/image-list: "my-python-app=905418475780.dkr.ecr.ap-south-1.amazonaws.com/devsecops/maven"
 spec:
   replicas: 2
   selector:
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: my-python-app
-          image: my-simple-app=905418475780.dkr.ecr.ap-south-1.amazonaws.com/devsecops/maven:latest  # Update the image with your actual account ID and repository name
+          image: simple-app=905418475780.dkr.ecr.ap-south-1.amazonaws.com/devsecops/maven:latest  # Update the image with your actual account ID and repository name
           ports:
             - containerPort: 5000  # Updated to match the exposed port in the Dockerfile
           resources:
