@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-simple-app
+  name: my-python-app
   annotations:
-    argocd-image-updater.argoproj.io/image-list: "my-simple-app=905418475780.dkr.ecr.ap-south-1.amazonaws.com/devsecops/maven:latest"
+    argocd-image-updater.argoproj.io/image-list: "my-python-app=my-simple-app=905418475780.dkr.ecr.ap-south-1.amazonaws.com/devsecops/maven"
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: my-simple-app
+      app: my-python-app
   template:
     metadata:
       labels:
-        app: my-simple-app
+        app: my-python-app
     spec:
       containers:
-        - name: simple-app
-          image: 905418475780.dkr.ecr.ap-south-1.amazonaws.com/devsecops/maven:latest:latest
+        - name: my-python-app
+          image: my-simple-app=905418475780.dkr.ecr.ap-south-1.amazonaws.com/devsecops/maven:latest:latest  # Update the image with your actual account ID and repository name
           ports:
-            - containerPort: 3000
+            - containerPort: 5000  # Updated to match the exposed port in the Dockerfile
           resources:
             requests:
               memory: "64Mi"
@@ -30,12 +30,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-simple-app-service
+  name: my-python-app-service
 spec:
   selector:
-    app: my-simple-app
+    app: my-python-app
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 3000
+      targetPort: 5000  # Updated to match the containerPort
   type: LoadBalancer
