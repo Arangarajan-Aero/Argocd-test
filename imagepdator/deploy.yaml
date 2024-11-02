@@ -15,7 +15,7 @@ spec:
         app: my-simple-app
     spec:
       containers:
-        - name: my-simple-app
+        - name: simple-app
           image: 905418475780.dkr.ecr.ap-south-1.amazonaws.com/devsecops/maven:latest:latest
           ports:
             - containerPort: 3000
