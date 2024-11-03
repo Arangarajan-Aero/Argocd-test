@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: my-python-app
   annotations:
-    argocd-image-updater.argoproj.io/image-list: "my-python-app=905418475780.dkr.ecr.ap-south-1.amazonaws.com/devsecops/maven"
+    argocd-image-updater.argoproj.io/image-list: "my-python-app=905418475780.dkr.ecr.ap-south-1.amazonaws.com/image-updator"
 spec:
   replicas: 1
   selector:
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: my-python-app
-          image: 905418475780.dkr.ecr.ap-south-1.amazonaws.com/devsecops/maven:latest
+          image: 905418475780.dkr.ecr.ap-south-1.amazonaws.com/image-updator:v1
           ports:
             - containerPort: 5000
           resources:
