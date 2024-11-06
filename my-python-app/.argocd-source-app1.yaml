@@ -4,7 +4,7 @@ helm:
     value: 905418475780.dkr.ecr.ap-south-1.amazonaws.com/image-updator
     forcestring: false
   - name: image.tag
-    value: v3
+    value: v4
     forcestring: true
   - name: replicaCount
     value: "1"
