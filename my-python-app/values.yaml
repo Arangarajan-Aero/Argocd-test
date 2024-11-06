@@ -2,10 +2,10 @@ replicaCount: 2
 
 image:
   repository: 905418475780.dkr.ecr.ap-south-1.amazonaws.com/devsecops/maven
-  tag: "27-dc64736eb05ee5cc3b07061a97121a3800cb8ea3"
+  tag: 27-dc64736eb05ee5cc3b07061a97121a3800cb8ea3
   pullPolicy: IfNotPresent
 
-# imagePullSecrets: ecr-secret
+  imagePullSecrets: ecr-secret
 
 service:
   type: ClusterIP
