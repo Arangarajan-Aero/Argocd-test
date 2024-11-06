@@ -15,9 +15,10 @@ spec:
         app: {{ .Release.Name }}
     spec:
       containers:
-      - name: {{ .Release.Name }}-container
-        image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
-        ports:
-        - containerPort: {{ .Values.service.targetPort }}
+        - name: {{ .Release.Name }}-container
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          ports:
+            - containerPort: {{ .Values.service.targetPort }}
+      # Uncomment if you use imagePullSecrets
       # imagePullSecrets:
       # - name: {{ .Values.imagePullSecrets }}
