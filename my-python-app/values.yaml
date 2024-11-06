@@ -5,6 +5,7 @@ image:
   tag: 27-dc64736eb05ee5cc3b07061a97121a3800cb8ea3
   pullPolicy: IfNotPresent
 
+  # Uncomment and provide a value if imagePullSecrets is used
   # imagePullSecrets: ecr-secret
 
 service:
