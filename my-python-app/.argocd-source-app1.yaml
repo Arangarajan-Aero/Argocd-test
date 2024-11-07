@@ -4,7 +4,7 @@ helm:
     value: 905418475780.dkr.ecr.ap-south-1.amazonaws.com/devsecops/maven
     forcestring: false
   - name: image.tag
-    value: 28-dc64736eb05ee5cc3b07061a97121a3800cb8ea3
+    value: 30-bbaae78404a1ee74d210be1ea775a7a9ebd13b1a
     forcestring: true
   - name: replicaCount
     value: "1"
