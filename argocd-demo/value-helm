@@ -172,7 +172,7 @@ config:
       prefix: 905418475780.dkr.ecr.ap-south-1.amazonaws.com
       ping: yes
       insecure: no
-      credentials: ext:/scripts/auth1.s
+      credentials: ext:/scripts/auth1.sh
       credsexpire: 10h
       
 
